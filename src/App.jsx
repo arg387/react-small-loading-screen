@@ -9,10 +9,9 @@ function App(){
     if(progress >= 0 && progress < 100 ){
       setProgress(progress+10)
     }
-    else {
-      setProgress(0)
-    }
-    
+  }
+  function revertProgress(){
+    setProgress(0)
   }
   function GoingMouseEnter() {
     setMouseHovered(true);
@@ -24,7 +23,8 @@ function App(){
   return(
   <>
   <div className="centered"><ProgressBar progress={progress}/>
-  <button onMouseEnter={GoingMouseEnter} onMouseLeave={GoingMouseLeave} onClick={updateProgress}>Update Progress</button></div></>)
+  <button onMouseEnter={GoingMouseEnter} onMouseLeave={GoingMouseLeave} onClick={updateProgress}>Update Progress</button>
+  <button onClick={revertProgress}>Revert Progress</button></div></>)
 }
 
 export default App
